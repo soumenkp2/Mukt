@@ -3,6 +3,7 @@ package com.example.mukt.event_section;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.Manifest;
 import android.app.ProgressDialog;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.mukt.MainActivity;
 import com.example.mukt.R;
+import com.example.mukt.RecommendActivity;
 import com.example.mukt.event_section.model_class.event_info;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -50,6 +52,7 @@ public class event_create extends AppCompatActivity {
     Bitmap bitmap;
     ImageView add_img;
     ImageView cover_pic;
+    CardView recommend_btn;
 
 
     @Override
@@ -118,6 +121,7 @@ public class event_create extends AppCompatActivity {
         venue_address = (EditText) findViewById(R.id.address_txt);
         org_name = (EditText) findViewById(R.id.ogr_name_txt);
         event_type = (EditText) findViewById(R.id.type_txt);
+        recommend_btn =  findViewById(R.id.go);
 
 
         add_btn = (TextView) findViewById(R.id.add_btn);
@@ -208,6 +212,12 @@ public class event_create extends AppCompatActivity {
             }
         });
 
-
+        recommend_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(event_create.this, RecommendActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
