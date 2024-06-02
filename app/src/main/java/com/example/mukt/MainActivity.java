@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
         ConstraintLayout send_button = (ConstraintLayout) dlg.findViewById(R.id.send_msg);
         EditText msg = (EditText)dlg.findViewById(R.id.editTextMessage);
 
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://143.110.185.163:5500")
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://127.0.0.1:5000")
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -193,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(Call<BotMessage> call, Response<BotMessage> response) {
                         //response.body() have your LoginResult fields and methods  (example you have to access error then try like this response.body().getError() )
                         Log.i(getClass().toString(),"Bot: " + response.body().getReply());
+                        Log.d("SOUMEN BOT",response.body().toString());
                         messages.add(new Message(1,response.body().getReply(),false));
                         messagesRecyclerAdapter = new MessagesRecyclerAdapter(getApplicationContext(),messages);
                         recyclerView.setAdapter(messagesRecyclerAdapter);
@@ -201,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<BotMessage> call, Throwable t) {
+                        Log.d("SOUMEN BOT",t.getMessage().toString());
                         //for getting error in network put here Toast, so get the error on network
                     }
                 });

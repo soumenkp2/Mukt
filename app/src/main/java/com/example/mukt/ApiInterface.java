@@ -6,7 +6,7 @@ import retrofit2.http.POST;
 
 public interface ApiInterface {
 
-    @POST("/Mukti")
+    @POST("/predict")
     Call<BotMessage> getStringScalar(@Body UserMessage body);
 
 }

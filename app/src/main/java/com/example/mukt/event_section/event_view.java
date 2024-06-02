@@ -15,7 +15,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.mukt.MainActivity;
 import com.example.mukt.R;
-import com.example.mukt.Ticket_generator;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -120,7 +119,7 @@ public class event_view extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(event_view.this, Ticket_generator.class);
+                Intent i = new Intent(event_view.this,Ticket_generator.class);
                 i.putExtra("name", event_name);
                 i.putExtra("date", date);
                 i.putExtra("time", time);

@@ -83,7 +83,7 @@ public class event_showcase_list extends Fragment {
         showcase_recycler = (RecyclerView) view.findViewById(R.id.event_showcase_list_frag);
         showcase_recycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
 
-        Toast.makeText(getContext(), query_event_type, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), query_event_type, Toast.LENGTH_SHORT).show();
 
         FirebaseRecyclerOptions<event_info> options =
                 new FirebaseRecyclerOptions.Builder<event_info>()

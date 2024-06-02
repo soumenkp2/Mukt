@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.mukt.R;
-import com.example.mukt.Ticket_generator;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -47,7 +46,6 @@ public class event_view_details extends Fragment {
     ImageView img;
     TextView name, date, time, venue, address, type, doc;
     TextView book_btn;
-
 
 
 
